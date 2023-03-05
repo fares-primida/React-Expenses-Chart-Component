@@ -8,7 +8,7 @@ import { createElement } from 'react'
 function CreateElements({ST , AMOUNT , MINIMUM}) {
     return React.createElement('div' , {className:'chart'} , 
     createElement('div' , {className: 'body' , style: {height: AMOUNT * 2 + MINIMUM + 'px'}} , null),
-    createElement('span' , null , ST)
+    createElement('span' , {className: 'SPAN'} , ST)
     )
 }
 
@@ -28,6 +28,11 @@ const Elements = []
 
 
 
+
+// const sum = [1, 2, 3].reduce((partialSum, a) => partialSum + a, );
+// console.log(sum); // 6
+
+
 const Project = () => {
     return (
         <div className='container'>
@@ -35,7 +40,7 @@ const Project = () => {
                 <div className="balance-container">
                     <div className="price">
                         <p>My Balance</p>
-                        <h2>$200.99</h2>
+                        <h2>$921.48</h2>
                     </div>
                     <div className="logo">
                         <img src={Logo} alt="" />
@@ -49,14 +54,19 @@ const Project = () => {
                     </div>
                     <div className="charts">
                         <div className="charts-container">
-                            {/* <div className="chart">
-                                <div className="body"></div>
-                                <span>Mun</span>
-                            </div> */}
                             <AddElements />
                         </div>
                     </div>
-                    <div className="Total-Price"></div>
+                    <div className="Total-Price">
+                        <div className="Total">
+                            <p>Total This Month</p>
+                            <h2>$478.33</h2>
+                        </div>
+                        <div className="percent">
+                            <p>+2.4%</p>
+                            <h3>From Last Month</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

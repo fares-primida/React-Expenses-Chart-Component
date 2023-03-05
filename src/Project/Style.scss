@@ -96,6 +96,41 @@ $Very-pale-orange: hsl(33, 100%, 98%);
                     }
                     }
                 }
+                .Total-Price {
+                    @include Position-And-Size(default , 100% , 120px);
+                    @include Center(flex , center , space-between);
+                    padding: 10px 0px;
+                    .Total {
+                        @include Position-And-Size(default , 180px , 100%);
+                        @include Center(flex , start , center);
+                        flex-direction: column;
+                        p {
+                            color: $Dark-brown;
+                            font-weight: 400;
+                            font-size: 14px;
+                        }
+                        h2 {
+                            color: #000;
+                            font-weight: 700;
+                            font-size: 40px;
+                        }
+                    }
+                    .percent {
+                        @include Position-And-Size(default , 180px , 100%);
+                        @include Center(flex , end , center);
+                        flex-direction: column;
+                        p {
+                            color: $Dark-brown;
+                            font-weight: 400;
+                            font-size: 1.2rem;
+                        }
+                        h3 {
+                            color: $Medium-brown;
+                            font-weight: 700;
+                            font-size: 18px;
+                        }
+                    }
+                }
             }
         }
     }
