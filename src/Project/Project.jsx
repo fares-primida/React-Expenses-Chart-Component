@@ -1,6 +1,32 @@
 import React from 'react'
 import './Style.scss'
 import Logo from './images/logo.svg'
+import {data} from './Data'
+import { createElement } from 'react'
+
+
+function CreateElements({ST , AMOUNT , MINIMUM}) {
+    return React.createElement('div' , {className:'chart'} , 
+    createElement('div' , {className: 'body' , style: {height: AMOUNT * 2 + MINIMUM + 'px'}} , null),
+    createElement('span' , null , ST)
+    )
+}
+
+const AddElements = () => {
+    for(let i = 0; i < data.length; i++) {
+        Elements.push(<CreateElements
+        key={i}
+        AMOUNT={data[i].amount}
+        MINIMUM={data[i].Minimum}
+        ST={data[i].day}
+        />)
+    }
+    return Elements
+}
+
+const Elements = []
+
+
 
 const Project = () => {
     return (
@@ -23,8 +49,11 @@ const Project = () => {
                     </div>
                     <div className="charts">
                         <div className="charts-container">
-                            <div className="chart"></div>
+                            {/* <div className="chart">
+                                <div className="body"></div>
                                 <span>Mun</span>
+                            </div> */}
+                            <AddElements />
                         </div>
                     </div>
                     <div className="Total-Price"></div>

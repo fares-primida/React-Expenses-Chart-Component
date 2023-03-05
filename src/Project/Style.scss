@@ -77,17 +77,25 @@ $Very-pale-orange: hsl(33, 100%, 98%);
                     @include Grid(grid , repeat(7 , 1fr) , 1fr 30px);
                     grid-column-gap: 10px;
                     align-items: end;
+                    text-align: center;
                     .chart {
-                        @include Position-And-Size(default , 100% , 50px);
-                        grid-row: 1;
-                        background-color: $Soft-red;
-                        border-radius: 7px;
+                        grid-row: 1 / 3;
+                        .body {
+                            @include Position-And-Size(default , 100% , 50px);
+                            background-color: $Soft-red;
+                            border-radius: 7px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: hsl(10, 73%, 68%);
+                            }
+                        } 
+                        span {
+                            color: $Medium-brown;
+                            font-weight: 400;
+                        }
                     }
-                    span {
-                        grid-row: 2;
                     }
                 }
             }
         }
     }
-}
